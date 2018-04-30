@@ -1,6 +1,6 @@
 {
-  "name": "smartdns-ui",
-  "short_name": "smartdns-ui",
+  "name": "fullstack-ui",
+  "short_name": "fullstack-ui",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",

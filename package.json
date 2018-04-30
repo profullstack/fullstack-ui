@@ -1,5 +1,6 @@
 {
-  "name": "smartdns-ui",
+  "name": "fullstack-ui",
+  "description": "Fullstack UI with vue.js and scss.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -47,5 +48,6 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "license": "MIT"
 }

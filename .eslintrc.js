@@ -3,5 +3,9 @@ module.exports = {
   'extends': [
     'plugin:vue/essential',
     '@vue/airbnb'
-  ]
+  ],
+  'rules': {
+    'no-param-reassign': ['error', { 'props': false }],
+    'no-underscore-dangle': 'off',
+  }
 }

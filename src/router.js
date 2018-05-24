@@ -8,7 +8,7 @@ import Register from './views/Register.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -34,6 +34,31 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });
+
+function requireAuth(to, from, next) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const isLoggedIn = !!localStorage.getItem('token');
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!isLoggedIn) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath },
+      });
+    } else {
+      next();
+    }
+  } else {
+    next(); // make sure to always call next()!
+  }
+}
+
+router.beforeEach(requireAuth);
+
+export default router;

@@ -4,13 +4,13 @@
       <div>
         <input type="text"
                id="username"
-               placeholder="enter username"
+               placeholder="Enter username"
                v-model="credentials.username">
       </div>
       <div>
         <input type="password"
                id="password"
-               placeholder="enter password"
+               placeholder="Enter password"
                v-model="credentials.password">
       </div>
       <div class="actions">

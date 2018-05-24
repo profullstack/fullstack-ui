@@ -2,6 +2,7 @@ export const ACCOUNTS_USER = 'accounts/ACCOUNTS_USER';
 export const ACCOUNTS_LOGIN_STATUS = 'accounts/ACCOUNTS_LOGIN_STATUS';
 export const ACCOUNTS_LOGOUT = 'accounts/ACCOUNTS_LOGOUT';
 export const ACCOUNTS_TOKEN = 'accounts/ACCOUNTS_TOKEN';
+export const ACCOUNTS_REGISTER = 'accounts/ACCOUNTS_REGISTER';
 
 // parse
 export const PARSE_ALL = 'parse/PARSE_ALL';

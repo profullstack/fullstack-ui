@@ -1,0 +1,21 @@
+input[type=text], input[type=password], input[type=email] {
+  padding: 1rem;
+  border: 1px solid #000;
+  outline: none;
+  margin-bottom: 1rem;
+  width: 20rem;
+  font-size: 1rem;
+}
+
+button {
+  border: 1px solid #000;
+  padding: 1rem 2rem;
+  outline: none;
+  background-color: #ccc;
+  color: #000;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}

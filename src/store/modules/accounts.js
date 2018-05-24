@@ -2,6 +2,13 @@ import accounts from '../api/accounts';
 import * as types from '../types';
 
 const actions = {
+  [types.ACCOUNTS_REGISTER]: ({ commit }, opts) => accounts.register(opts)
+    .then((res) => {
+      commit(types.ACCOUNTS_USER, res.data.user);
+      commit(types.ACCOUNTS_LOGIN_STATUS, res.data.message);
+      commit(types.ACCOUNTS_TOKEN, res.data.token);
+    }),
+
   [types.ACCOUNTS_USER]: ({ commit }, creds) => accounts.login(creds)
     .then((res) => {
       commit(types.ACCOUNTS_USER, res.data.user);

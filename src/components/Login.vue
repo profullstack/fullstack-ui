@@ -46,7 +46,13 @@ export default {
     onSubmit() {
       this.login(this.credentials)
         .then(() => {
-          this.$router.push('dashboard');
+          const { redirect } = this.$route.query;
+
+          if (redirect) {
+            this.$router.push(redirect);
+          } else {
+            this.$router.push('dashboard');
+          }
         });
     },
   },

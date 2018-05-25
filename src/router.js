@@ -5,6 +5,10 @@ import Dashboard from '@/components/Dashboard.vue';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Register from './views/Register.vue';
+import ShowItem from './views/items/Show.vue';
+import ListItems from './views/items/List.vue';
+import EditItem from './views/items/Edit.vue';
+import NewItem from './views/items/New.vue';
 
 Vue.use(Router);
 
@@ -37,6 +41,32 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
+    },
+    {
+      path: '/items',
+      name: 'items',
+      component: ListItems,
+      children: [{
+        path: 'new',
+        component: NewItem,
+        meta: {
+          requiresAuth: true,
+        },
+      }],
+    },
+    {
+      path: '/items/:id',
+      name: 'item',
+      component: ShowItem,
+      children: [
+        {
+          path: 'edit',
+          name: 'EditItem',
+          component: EditItem,
+          meta: {
+            requiresAuth: true,
+          },
+        }],
     },
   ],
 });

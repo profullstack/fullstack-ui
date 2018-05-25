@@ -3,13 +3,10 @@
     <h1>Dashboard {{status}}</h1>
     <ul>
       <li>
-        <router-link to="keywords">Keywords</router-link>
+        <router-link to="/items">All Items</router-link>
       </li>
       <li>
-        <router-link to="search">Search</router-link>
-      </li>
-      <li>
-        <router-link to="parse">Parse</router-link>
+        <router-link to="/items/me">My Items</router-link>
       </li>
     </ul>
   </div>

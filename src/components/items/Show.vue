@@ -25,6 +25,7 @@ export default {
   methods: {
     onDelete() {
       const { id } = this.item._id;
+      // confirm
 
       items.delete(id)
         .then(() => {

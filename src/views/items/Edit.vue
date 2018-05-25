@@ -1,10 +1,14 @@
 <template>
-  <Item :item="item" />
+  <EditItem :item="item"/>
 </template>
 <script>
-import items from '../store/api/items';
+import EditItem from '@/components/items/Edit.vue';
+import items from '../../store/api/items';
 
 export default {
+  components: {
+    EditItem,
+  },
   data() {
     return {
       item: {},

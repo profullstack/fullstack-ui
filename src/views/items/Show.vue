@@ -1,31 +1,36 @@
 <template>
-  <ShowItem :item="item"/>
+  <ShowItem :item="item" />
 </template>
 <script>
+import { mapActions, mapGetters, mapMutations } from 'vuex';
+import * as types from '@/store/types';
 import ShowItem from '@/components/items/Show.vue';
-import items from '../../store/api/items';
 
 export default {
   components: {
     ShowItem,
   },
-  data() {
-    return {
-      item: {},
-    };
+  computed: {
+    ...mapGetters({
+      item: types.ITEMS_GET,
+    }),
   },
-  mounted() {
-    this.getItem();
-  },
-  methods: {
-    getItem() {
-      const { id } = this.$route.params.id;
 
-      items.getItem(id)
-        .then((res) => {
-          this.item = res.data;
-        });
-    },
+  methods: {
+    ...mapActions({
+      getItem: types.ITEMS_GET,
+    }),
+    ...mapMutations({
+      resetItem: types.ITEMS_ITEM,
+    }),
+  },
+
+  mounted() {
+    this.getItem({ id: this.$route.params.id });
+  },
+
+  beforeDestroy() {
+    this.resetItem(null);
   },
 };
 </script>

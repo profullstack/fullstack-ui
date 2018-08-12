@@ -5,6 +5,10 @@
         <h2>{{item.title}}</h2>
         <p><a :href="item.url">{{item.url}}</a></p>
         <p>{{item.description}}</p>
+        <nav class="subnav">
+          <router-link :to="`/items/${item._id}`">show</router-link>
+          <router-link :to="`/items/${item._id}/edit`">edit</router-link>
+        </nav>
       </li>
     </ul>
   </div>

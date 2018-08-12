@@ -2,6 +2,17 @@
 
 Fullstack UI with vue.js and scss.
 
+## development
+
+	npm i
+	npm start
+
+
+## deploy
+
+	npm run build
+	./bin/deploy.sh
+
 
 ## todo
 

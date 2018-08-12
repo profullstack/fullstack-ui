@@ -26,6 +26,11 @@ const actions = {
     .then((res) => {
       commit(types.ITEMS_LIST, res.data);
     }),
+
+  [types.ITEMS_LIST_ME]: ({ commit }) => items.getAllByUser()
+    .then((res) => {
+      commit(types.ITEMS_LIST, res.data);
+    }),
 };
 
 const mutations = {

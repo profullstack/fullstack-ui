@@ -28,3 +28,4 @@ export const ITEMS_DELETE = 'items/ITEMS_DELETE';
 export const ITEMS_PUT = 'items/ITEMS_PUT';
 export const ITEMS_GET = 'items/ITEMS_GET';
 export const ITEMS_LIST = 'items/ITEMS_LIST';
+export const ITEMS_LIST_ME = 'items/ITEMS_LIST_ME';

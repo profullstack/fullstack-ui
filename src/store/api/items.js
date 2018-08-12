@@ -20,4 +20,8 @@ export default {
   getAll() {
     return api.get('/items');
   },
+
+  getAllByUser() {
+    return api.get('/items/me');
+  },
 };

@@ -9,6 +9,7 @@ import ShowItem from './views/items/Show.vue';
 import ListItems from './views/items/List.vue';
 import EditItem from './views/items/Edit.vue';
 import NewItem from './views/items/New.vue';
+import MyItems from './views/items/Me.vue';
 
 Vue.use(Router);
 
@@ -46,13 +47,21 @@ const router = new Router({
       path: '/items',
       name: 'items',
       component: ListItems,
-      children: [{
-        path: 'new',
-        component: NewItem,
-        meta: {
-          requiresAuth: true,
-        },
-      }],
+    },
+    {
+      path: '/items/new',
+      component: NewItem,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/items/me',
+      name: 'items',
+      component: MyItems,
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: '/items/:id',

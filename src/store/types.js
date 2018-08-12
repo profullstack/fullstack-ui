@@ -23,9 +23,8 @@ export const KEYWORDS_ALL = 'keywords/KEYWORDS_ALL';
 
 // items
 export const ITEMS_ITEM = 'items/ITEMS_ITEM';
-export const ITEMS_LIST = 'items/ITEMS_LIST';
 export const ITEMS_POST = 'items/ITEMS_POST';
 export const ITEMS_DELETE = 'items/ITEMS_DELETE';
 export const ITEMS_PUT = 'items/ITEMS_PUT';
 export const ITEMS_GET = 'items/ITEMS_GET';
-export const ITEMS_ALL = 'items/ITEMS_ALL';
+export const ITEMS_LIST = 'items/ITEMS_LIST';

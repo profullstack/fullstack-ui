@@ -20,11 +20,26 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex';
+import * as types from '../../store/types';
+
 export default {
   data() {
     return {
       item: {},
     };
+  },
+
+  methods: {
+    ...mapActions({
+      postItem: types.ITEMS_POST,
+    }),
+    onSubmit() {
+      this.postItem(this.item)
+        .then(() => {
+          this.$router.push('/dashboard');
+        });
+    },
   },
 };
 </script>

@@ -5,6 +5,7 @@ import accounts from './modules/accounts';
 import parse from './modules/parse';
 import search from './modules/search';
 import keywords from './modules/keywords';
+import items from './modules/items';
 
 Vue.use(Vuex);
 
@@ -18,6 +19,7 @@ const store = new Vuex.Store({
     parse,
     search,
     keywords,
+    items,
   },
 });
 

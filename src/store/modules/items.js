@@ -22,7 +22,7 @@ const actions = {
       commit(types.ITEMS_ITEM, res.data);
     }),
 
-  [types.ITEMS_ALL]: ({ commit }) => items.getAll()
+  [types.ITEMS_LIST]: ({ commit }) => items.getAll()
     .then((res) => {
       commit(types.ITEMS_LIST, res.data);
     }),
@@ -34,19 +34,19 @@ const mutations = {
   },
 
   [types.ITEMS_LIST]: (state, data) => {
-    state.list = data;
+    state.items = data;
   },
 };
 
 const getters = {
   [types.ITEMS_ITEM]: state => state.item,
 
-  [types.ITEMS_LIST]: state => state.list,
+  [types.ITEMS_LIST]: state => state.items,
 };
 
 const state = {
   item: null,
-  list: [],
+  items: [],
 };
 
 export default {

@@ -6,30 +6,38 @@
   </section>
 </template>
 <script>
+import { mapActions, mapGetters, mapMutations } from 'vuex';
+import * as types from '@/store/types';
 import ListItems from '@/components/items/List.vue';
 import Nav from '@/components/items/Nav.vue';
-import items from '../../store/api/items';
 
 export default {
   components: {
     ListItems,
     Nav,
   },
-  data() {
-    return {
-      items: [],
-    };
+
+  computed: {
+    ...mapGetters({
+      items: types.ITEMS_LIST,
+    }),
   },
+
+  methods: {
+    ...mapActions({
+      getItems: types.ITEMS_LIST,
+    }),
+    ...mapMutations({
+      resetItems: types.ITEMS_LIST,
+    }),
+  },
+
   mounted() {
     this.getItems();
   },
-  methods: {
-    getItems() {
-      items.getAll()
-        .then((res) => {
-          this.items = res.data;
-        });
-    },
+
+  beforeDestroy() {
+    this.resetItems([]);
   },
 };
 </script>

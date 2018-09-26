@@ -1,4 +1,4 @@
-import api from './create-api';
+import { api, globalErrorHandler } from './create-api';
 
 export default {
   login(creds) {
@@ -7,9 +7,11 @@ export default {
         api.defaults.headers.Authorization = `Bearer ${res.data.token}`;
 
         return res;
-      });
+      })
+      .catch(globalErrorHandler);
   },
   register(creds) {
-    return api.post('/accounts', creds);
+    return api.post('/accounts', creds)
+      .catch(globalErrorHandler);
   },
 };

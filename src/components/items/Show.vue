@@ -1,8 +1,11 @@
 <template>
   <div class="item">
-    <h1><a href="item.url">{{item.title}}</a></h1>
-    <p class="message"
-       v-if="message">{{message}}</p>
+    <h1>
+      <a :href="item.url" v-if="item.url">{{item.title}}</a>
+      <span v-else>
+        {{item.title}}
+      </span>
+    </h1>
     <article>
       {{item.description}}
     </article>
@@ -24,10 +27,8 @@ export default {
   },
   methods: {
     onDelete() {
-      const { id } = this.item._id;
       // confirm
-
-      items.delete(id)
+      items.delete(this.item._id)
         .then(() => {
           this.message = 'Item deleted!';
           this.$router.push('dashboard');

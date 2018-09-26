@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      item: types.ITEMS_GET,
+      item: types.ITEMS_ITEM,
     }),
   },
 
@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    this.getItem({ id: this.$route.params.id });
+    this.getItem({ _id: this.$route.params.id });
   },
 
   beforeDestroy() {

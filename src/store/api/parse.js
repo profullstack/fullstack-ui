@@ -1,4 +1,4 @@
-import api from './create-api';
+import { api } from './create-api';
 
 export default {
   getAll(opts) {

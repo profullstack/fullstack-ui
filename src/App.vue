@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link to="/">{{$t('home')}}</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/register"
                    v-if="!isLoggedIn">Register</router-link>

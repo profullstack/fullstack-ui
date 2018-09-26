@@ -18,7 +18,7 @@ function globalErrorHandler(err) {
   return Promise.reject(err);
 }
 
-export default {
+export {
   api,
   globalErrorHandler,
 };

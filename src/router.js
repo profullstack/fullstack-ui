@@ -10,6 +10,11 @@ import ListItems from './views/items/List.vue';
 import EditItem from './views/items/Edit.vue';
 import NewItem from './views/items/New.vue';
 import MyItems from './views/items/Me.vue';
+import ShowNote from './views/notes/Show.vue';
+import ListNotes from './views/notes/List.vue';
+import EditNote from './views/notes/Edit.vue';
+import NewNote from './views/notes/New.vue';
+import MyNotes from './views/notes/Me.vue';
 
 Vue.use(Router);
 
@@ -72,6 +77,40 @@ const router = new Router({
           path: 'edit',
           name: 'EditItem',
           component: EditItem,
+          meta: {
+            requiresAuth: true,
+          },
+        }],
+    },
+    {
+      path: '/notes',
+      name: 'notes',
+      component: ListNotes,
+    },
+    {
+      path: '/notes/new',
+      component: NewNote,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/notes/me',
+      name: 'MyNotes',
+      component: MyNotes,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/notes/:id',
+      name: 'note',
+      component: ShowNote,
+      children: [
+        {
+          path: 'edit',
+          name: 'EditNote',
+          component: EditNote,
           meta: {
             requiresAuth: true,
           },

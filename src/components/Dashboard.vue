@@ -8,6 +8,12 @@
       <li>
         <router-link to="/items/me">My Items</router-link>
       </li>
+      <li>
+        <router-link to="/notes">All Notes</router-link>
+      </li>
+      <li>
+        <router-link to="/notes/me">My Notes</router-link>
+      </li>
     </ul>
   </div>
 </template>

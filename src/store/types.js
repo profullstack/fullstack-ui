@@ -29,3 +29,13 @@ export const ITEMS_PUT = 'items/ITEMS_PUT';
 export const ITEMS_GET = 'items/ITEMS_GET';
 export const ITEMS_LIST = 'items/ITEMS_LIST';
 export const ITEMS_LIST_ME = 'items/ITEMS_LIST_ME';
+
+
+// notes
+export const NOTES_NOTE = 'notes/NOTES_NOTE';
+export const NOTES_POST = 'notes/NOTES_POST';
+export const NOTES_DELETE = 'notes/NOTES_DELETE';
+export const NOTES_PUT = 'notes/NOTES_PUT';
+export const NOTES_GET = 'notes/NOTES_GET';
+export const NOTES_LIST = 'notes/NOTES_LIST';
+export const NOTES_LIST_ME = 'notes/NOTES_LIST_ME';

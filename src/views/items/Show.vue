@@ -1,5 +1,8 @@
 <template>
-  <ShowItem :item="item" />
+  <section>
+    <ShowItem :item="item" v-if="item" />
+    <router-view></router-view>
+  </section>
 </template>
 <script>
 import { mapActions, mapGetters, mapMutations } from 'vuex';

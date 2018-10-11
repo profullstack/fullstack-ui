@@ -7,8 +7,9 @@ module.exports = {
       .url(process.env.VUE_DEV_SERVER_URL)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
+      .assert.containsText('h1', 'Welcome to fullstack-ui')
+      .assert.elementCount('h1', 1)
+      .assert.elementCount('p', 2)
       .end();
   },
 };

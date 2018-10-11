@@ -9,7 +9,8 @@
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -31,6 +32,7 @@
     "chai": "^4.1.2",
     "lint-staged": "^6.0.0",
     "node-sass": "^4.9.0",
+    "pre-commit": "^1.2.2",
     "sass-loader": "^6.0.7",
     "vue-template-compiler": "^2.5.13"
   },
@@ -52,5 +54,11 @@
       "git add"
     ]
   },
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "pre-commit": [
+    "precommit-msg",
+    "lint",
+    "e2e",
+    "test"
+  ]
 }

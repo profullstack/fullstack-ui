@@ -1,6 +1,6 @@
-# fullstack-ui
+# torula-ui
 
-Fullstack UI with vue.js and scss.
+Torula UI with vue.js and scss.
 
 ## development
 

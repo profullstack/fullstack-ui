@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>This project is copyright © 2018 - Anthony Ettinger</p>
     <p>
       Code is only available as a demonstration and is not to be<br />
       used in production without prior written consent.

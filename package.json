@@ -1,7 +1,7 @@
 {
-  "name": "fullstack-ui",
-  "description": "Fullstack UI with vue.js and scss.",
-  "version": "0.1.0",
+  "name": "torula-ui",
+  "description": "Torula UI with vue.js and scss.",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
@@ -10,6 +10,7 @@
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "lint": "vue-cli-service lint",
+    "deploy:dev": "npm run build && ./bin/deploy.sh",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
   "dependencies": {

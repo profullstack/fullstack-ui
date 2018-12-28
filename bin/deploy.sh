@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
+. .env.dev
+
+env
+
 args=(-azvP --delete --exclude=node_modules --exclude=.idea --exclude=.git)
-hosts=(geese) # tornado lightning thunder tundra jefferson
+hosts=(toruladev) # tornado lightning thunder tundra jefferson
 dry=() #add --dry-run to enable testing
-user=ettinger
-name=fullstack
-project=fullstack-ui
+user=$TORULA_USER
+name=$TORULA_PATH
+project=torula-ui
 
 for host in "${hosts[@]}"
 do
@@ -15,9 +19,9 @@ do
   echo "syncing ${host}"
   echo "---------------------"
   rsync ${dry[@]} ${args[@]} ./ ${user}@${host}:www/${name}/${project}
-  ssh -t ${user}@${host} \$HOME/www/${name}/${project}/bin/post-deploy.sh
+  #ssh -t ${user}@${host} \$HOME/www/${name}/${project}/bin/post-deploy.sh
 done
 
 version=$(jq -r .version package.json)
-say "fullstack UI is live!"
+say "torula dev UI is live!"
 exit

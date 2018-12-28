@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to fullstack-ui"/>
+    <HelloWorld msg="Welcome to toru.la"/>
   </div>
 </template>
 

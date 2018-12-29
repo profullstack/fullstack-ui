@@ -42,18 +42,12 @@ export default {
               widevine:
                 {
                   LA_URL: 'https://localhost:3443/api/1/sling/yGsZQrFlUn',
-                  headers: {
-                    'Content-Type': 'text/plain',
-                  },
                 },
               playready: {
                 LA_URL: 'https://localhost:3443/api/1/sling/tLnhgQIIu',
-                headers: {
-                  'Content-Type': 'text/plain',
-                },
               },
               fairplay: {
-                certificateURL: 'https://p-drmfp.movetv.com/fairplay/certificate',
+                certificateURL: 'https://localhost:3443/api/1/bKIvEvxhlH',
                 getLicenseServerUrl(contentId) {
                   return contentId.replace('skd://', 'https://');
                 },
@@ -67,9 +61,6 @@ export default {
                   return new Uint8Array(license);
                 },
                 licenseResponseType: 'arraybuffer',
-                headers: {
-                  'Content-Type': 'text/plain',
-                },
               },
             },
       },

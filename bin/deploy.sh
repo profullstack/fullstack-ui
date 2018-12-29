@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. .env.dev
+. .env
 
 env
 
@@ -23,5 +23,5 @@ do
 done
 
 version=$(jq -r .version package.json)
-say "torula dev UI is live!"
+say "torula UI is live!"
 exit

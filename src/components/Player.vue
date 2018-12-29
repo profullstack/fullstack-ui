@@ -1,18 +1,27 @@
 <template>
-  <div id="player"></div>
+  <div id="player" ref="player"></div>
 </template>
 <script>
 export default {
   name: 'player',
 
+  data() {
+    return {
+      player: null,
+    };
+  },
+
   mounted() {
-    (function xhr(open) {
-      XMLHttpRequest.prototype.open = function xhrOpen(method, url, ...args) {
+    // eslint-disable-next-line
+    (function (open) {
+      // eslint-disable-next-line
+      XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
         if (url.indexOf('bitmovin') > -1) {
-          /* eslint-disable no-param-reassign */
+          // eslint-disable-next-line
           url = 'https://localhost:3443/api/1/noop';
         }
-        open.apply(this, ...args);
+        // eslint-disable-next-line
+        open.apply(this, arguments);
       };
     }(XMLHttpRequest.prototype.open));
 
@@ -57,9 +66,15 @@ export default {
       },
     };
 
-    const player = window.bitmovin.player('player');
-
-    player.setup(conf);
+    const player = new window.bitmovin.player.Player(this.$refs.player, { key: conf.key });
+    player.load(conf.source)
+      .then(() => {
+        this.player = player;
+        console.log(this.player);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
 };
 </script>

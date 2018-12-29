@@ -15,6 +15,7 @@ import ListNotes from './views/notes/List.vue';
 import EditNote from './views/notes/Edit.vue';
 import NewNote from './views/notes/New.vue';
 import MyNotes from './views/notes/Me.vue';
+import Player from './views/Player.vue';
 
 Vue.use(Router);
 
@@ -115,6 +116,11 @@ const router = new Router({
             requiresAuth: true,
           },
         }],
+    },
+    {
+      path: '/player',
+      name: 'player',
+      component: Player,
     },
   ],
 });

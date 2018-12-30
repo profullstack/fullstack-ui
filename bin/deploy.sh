@@ -2,8 +2,6 @@
 
 . .env
 
-env
-
 args=(-azvP --delete --exclude=node_modules --exclude=.idea --exclude=.git)
 hosts=(toruladev) # tornado lightning thunder tundra jefferson
 dry=() #add --dry-run to enable testing

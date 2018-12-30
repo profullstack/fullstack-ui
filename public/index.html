@@ -13,6 +13,20 @@
     <link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico">
     <link rel="stylesheet" href="/assets/fonts/fonts.css" type="text/css">
     <title>fullstack-ui</title>
+    <script>
+      // eslint-disable-next-line
+      (function (open) {
+        // eslint-disable-next-line
+        XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
+          if (url.indexOf('bitmovin') > -1) {
+            // eslint-disable-next-line
+            url = '/api/1/noop';
+          }
+          // eslint-disable-next-line
+          open.apply(this, arguments);
+        };
+      }(XMLHttpRequest.prototype.open));
+    </script>
   </head>
   <body>
     <noscript>

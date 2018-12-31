@@ -45,7 +45,7 @@ export default {
         // todo: show iframe for payments from coinpayments.net
         this.$router.push(`/transactions/${this.pendingTx._id}`);
       }
-    }
+    },
   },
 };
 </script>

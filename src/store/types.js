@@ -42,3 +42,11 @@ export const NOTES_LIST_ME = 'notes/NOTES_LIST_ME';
 // channels
 export const CHANNELS_LIST = 'channels/CHANNELS_LIST';
 export const CHANNELS_FAVORITES = 'channels/CHANNELS_FAVORITES';
+
+// transactions
+export const TRANSACTIONS_TX = 'transactions/TRANSACTIONS_TX';
+export const TRANSACTIONS_POST = 'transactions/TRANSACTIONS_POST';
+export const TRANSACTIONS_GET = 'transactions/TRANSACTIONS_GET';
+export const TRANSACTIONS_LIST = 'transactions/TRANSACTIONS_LIST';
+export const TRANSACTIONS_LIST_ME = 'transactions/TRANSACTIONS_LIST_ME';
+export const TRANSACTIONS_PENDING = 'transactions/TRANSACTIONS_PENDING';

@@ -14,6 +14,9 @@
       <li>
         <router-link to="/notes/me">My Notes</router-link>
       </li>
+      <li>
+        <router-link to="/transactions/me">My Transactions</router-link>
+      </li>
     </ul>
   </div>
 </template>

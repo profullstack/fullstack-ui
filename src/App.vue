@@ -2,6 +2,7 @@
   <div id="app">
     <nav id="nav">
       <router-link to="/">{{$t('home')}}</router-link>
+      <router-link to="/player">Player</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/register"
                    v-if="!isLoggedIn">Register</router-link>
@@ -55,7 +56,9 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin: 0 auto;
-    max-width: 80%;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
   }
 
   nav {

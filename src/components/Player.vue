@@ -14,8 +14,10 @@ export default {
         key: 'f5e04f00-076b-47b3-a13f-c8e731f59124',
         network: {
           preprocessHttpRequest: (type, request) => {
+            console.log('type:', type);
+
             if (type && (
-              type === window.bitmovin.player.HttpRequestType.DRM_CERTIFICATE_FAIRPLAY ||
+              // type === window.bitmovin.player.HttpRequestType.DRM_CERTIFICATE_FAIRPLAY ||
               type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_CLEARKEY ||
               type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_FAIRPLAY ||
               type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_PLAYREADY ||
@@ -45,7 +47,8 @@ export default {
             LA_URL: '/api/1/sling/tLnhgQIIu',
           },
           fairplay: {
-            certificateURL: 'https://p-drmfp.movetv.com/fairplay/certificate',
+            // certificateURL: 'https://p-drmfp.movetv.com/fairplay/certificate',
+            certificateURL: '/api/1/sling/bKIvEvxhlH',
             getLicenseServerUrl(contentId) {
               return contentId.replace('skd://', 'https://');
             },
@@ -59,6 +62,9 @@ export default {
               return new Uint8Array(license);
             },
             licenseResponseType: 'arraybuffer',
+            headers: {
+              Authorization: `Bearer ${this.token}`,
+            },
           },
         },
       },

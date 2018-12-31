@@ -53,6 +53,9 @@ const router = new Router({
       path: '/items',
       name: 'items',
       component: ListItems,
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: '/items/new',
@@ -121,6 +124,9 @@ const router = new Router({
       path: '/player',
       name: 'player',
       component: Player,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 . .env
+. $HOME/.bashrc
 
 args=(-azvP --delete --exclude=node_modules --exclude=.idea --exclude=.git)
 hosts=(toruladev) # tornado lightning thunder tundra jefferson

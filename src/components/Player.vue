@@ -67,6 +67,7 @@ export default {
             },
           },
         },
+        // poster: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/poster.jpg',
       },
     };
   },
@@ -115,6 +116,7 @@ export default {
 
       this.player.load(this.source).then(() => {
         console.log('Successfully loaded source', this.source.title);
+        this.player.play();
       }, () => {
         // eslint-disable-next-line
         console.error('Error while loading source', arguments);
@@ -140,5 +142,10 @@ export default {
       width: 100%;
       height: auto;
     }
+  }
+</style>
+<style lang="scss">
+  .bmpui-ui-watermark {
+    display: none;
   }
 </style>

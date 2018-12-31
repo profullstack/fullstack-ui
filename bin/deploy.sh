@@ -22,5 +22,5 @@ do
 done
 
 version=$(jq -r .version package.json)
-say "torula UI is live!"
+say "tor ru la UI is live!"
 exit

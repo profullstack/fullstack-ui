@@ -1,49 +1,73 @@
 <template>
-  <div id="player" ref="player"></div>
+  <section>
+    <div id="player" ref="player"></div>
+  </section>
 </template>
 <script>
 export default {
   name: 'player',
-
+  props: ['channel'],
   data() {
     return {
       player: null,
       playerConfig: {
         key: 'f5e04f00-076b-47b3-a13f-c8e731f59124',
+        network: {
+          preprocessHttpRequest: (type, request) => {
+            if (type && (
+              type === window.bitmovin.player.HttpRequestType.DRM_CERTIFICATE_FAIRPLAY ||
+              type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_CLEARKEY ||
+              type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_FAIRPLAY ||
+              type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_PLAYREADY ||
+              type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_PRIMETIME ||
+              type === window.bitmovin.player.HttpRequestType.DRM_LICENSE_WIDEVINE ||
+              type === window.bitmovin.player.HttpRequestType.MANIFEST_DASH ||
+              type === window.bitmovin.player.HttpRequestType.MANIFEST_HLS_MASTER ||
+              type === window.bitmovin.player.HttpRequestType.MANIFEST_HLS_VARIANT ||
+              type === window.bitmovin.player.HttpRequestType.MANIFEST_SMOOTH
+            )) {
+              request.credentials = 'include';
+              request.headers.Authorization = `Bearer ${this.token}`;
+            }
+
+            return Promise.resolve(request);
+          },
+        },
       },
       source: {
-        dash: 'https://watch.torula.com/api/1/sling/cde03261707a47c3ac3f4242765dd424.mpd?rewrite=false',
-        hls: 'https://watch.torula.com/api/1/sling/cde03261707a47c3ac3f4242765dd424.m3u8',
-        drm:
-          {
-            widevine:
-              {
-                LA_URL: 'https://watch.torula.com/api/1/sling/yGsZQrFlUn',
-              },
-            playready: {
-              LA_URL: 'https://watch.torula.com/api/1/sling/tLnhgQIIu',
-            },
-            fairplay: {
-              certificateURL: 'https://p-drmfp.movetv.com/fairplay/certificate',
-              getLicenseServerUrl(contentId) {
-                return contentId.replace('skd://', 'https://');
-              },
-              prepareContentId(contentId) {
-                return contentId;
-              },
-              prepareMessage(event) {
-                return new Uint8Array(event.message);
-              },
-              prepareLicense(license) {
-                return new Uint8Array(license);
-              },
-              licenseResponseType: 'arraybuffer',
-            },
+        dash: '/api/1/sling/cde03261707a47c3ac3f4242765dd424.mpd?rewrite=false',
+        hls: '/api/1/sling/cde03261707a47c3ac3f4242765dd424.m3u8',
+        drm: {
+          widevine: {
+            LA_URL: '/api/1/sling/yGsZQrFlUn',
           },
+          playready: {
+            LA_URL: '/api/1/sling/tLnhgQIIu',
+          },
+          fairplay: {
+            certificateURL: 'https://p-drmfp.movetv.com/fairplay/certificate',
+            getLicenseServerUrl(contentId) {
+              return contentId.replace('skd://', 'https://');
+            },
+            prepareContentId(contentId) {
+              return contentId;
+            },
+            prepareMessage(event) {
+              return new Uint8Array(event.message);
+            },
+            prepareLicense(license) {
+              return new Uint8Array(license);
+            },
+            licenseResponseType: 'arraybuffer',
+          },
+        },
       },
     };
   },
   computed: {
+    token() {
+      return localStorage.getItem('token');
+    },
     api() {
       return process.env.NODE_ENV === 'production' ? '/api/1' : 'https://localhost:3443/api/1';
     },
@@ -66,6 +90,31 @@ export default {
       }
     },
   },
+  watch: {
+    channel(newChannel) {
+      const channel = newChannel;
+      const streamUrl = channel.hls_url || channel.stream_url;
+      const isHls = Boolean(channel.hls_url);
+
+      this.source.dash = `${streamUrl}?rewrite=false`;
+      this.source.hls = streamUrl.replace('.mpd', '.m3u8');
+
+      if (isHls) {
+        this.source.hls = streamUrl;
+        delete this.source.drm;
+        delete this.source.dash;
+      }
+
+      console.log('loading....', this.source);
+
+      this.player.load(this.source).then(() => {
+        console.log('Successfully loaded source', this.source.title);
+      }, () => {
+        // eslint-disable-next-line
+        console.error('Error while loading source', arguments);
+      });
+    },
+  },
   mounted() {
     this.setupPlayer();
   },
@@ -75,4 +124,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  section {
+    display: flex;
+    align-items: center;
+    width: calc(100vw - 25rem);
+    height: calc(100vh - 10rem);
+
+    #player {
+      width: 100%;
+      height: auto;
+    }
+  }
 </style>

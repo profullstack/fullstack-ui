@@ -8,6 +8,7 @@ import keywords from './modules/keywords';
 import items from './modules/items';
 import notes from './modules/notes';
 import channels from './modules/channels';
+import transactions from './modules/transactions';
 
 Vue.use(Vuex);
 
@@ -24,6 +25,7 @@ const store = new Vuex.Store({
     items,
     notes,
     channels,
+    transactions,
   },
 });
 

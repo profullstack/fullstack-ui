@@ -16,6 +16,9 @@ import EditNote from './views/notes/Edit.vue';
 import NewNote from './views/notes/New.vue';
 import MyNotes from './views/notes/Me.vue';
 import Player from './views/Player.vue';
+import MyTransactions from './views/transactions/Me.vue';
+import NewTransaction from './views/transactions/New.vue';
+import ShowTransaction from './views/transactions/Show.vue';
 
 Vue.use(Router);
 
@@ -124,6 +127,29 @@ const router = new Router({
       path: '/player',
       name: 'player',
       component: Player,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/transactions/new',
+      component: NewTransaction,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/transactions/me',
+      name: 'MyTransactions',
+      component: MyTransactions,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/transactions/:id',
+      name: 'transaction',
+      component: ShowTransaction,
       meta: {
         requiresAuth: true,
       },

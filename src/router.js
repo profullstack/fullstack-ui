@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/Login.vue';
 import Dashboard from '@/components/Dashboard.vue';
+import Whitelist from '@/components/Whitelist.vue';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Register from './views/Register.vue';
@@ -69,7 +70,7 @@ const router = new Router({
     },
     {
       path: '/items/me',
-      name: 'items',
+      name: 'my-items',
       component: MyItems,
       meta: {
         requiresAuth: true,
@@ -150,6 +151,14 @@ const router = new Router({
       path: '/transactions/:id',
       name: 'transaction',
       component: ShowTransaction,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/whitelist',
+      name: 'whitelist',
+      component: Whitelist,
       meta: {
         requiresAuth: true,
       },

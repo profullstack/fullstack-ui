@@ -14,4 +14,5 @@ export default {
     return api.post('/accounts', creds)
       .catch(globalErrorHandler);
   },
+
 };

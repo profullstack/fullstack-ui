@@ -50,3 +50,7 @@ export const TRANSACTIONS_GET = 'transactions/TRANSACTIONS_GET';
 export const TRANSACTIONS_LIST = 'transactions/TRANSACTIONS_LIST';
 export const TRANSACTIONS_LIST_ME = 'transactions/TRANSACTIONS_LIST_ME';
 export const TRANSACTIONS_PENDING = 'transactions/TRANSACTIONS_PENDING';
+
+// whitelist
+export const WHITELIST_LIST = 'whitelist/WHITELIST_LIST';
+export const WHITELIST_POST = 'whitelist/WHITELIST_POST';

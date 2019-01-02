@@ -17,6 +17,9 @@
       <li>
         <router-link to="/transactions/me">My Transactions</router-link>
       </li>
+      <li>
+        <router-link to="/whitelist">My Whitelist</router-link>
+      </li>
     </ul>
   </div>
 </template>

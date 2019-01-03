@@ -1,13 +1,22 @@
 <template>
   <div id="channels" ref="channels">
     <form>
-      <input type="text" name="filter" :value="filter" />
+      <input type="text" name="filter" v-model="filter" />
     </form>
     <ul>
-      <li v-for="(channel, index) in channels"
-          :key="index"
-          @click.prevent="onClickChannel(channel)">
-        {{channel.channel.title}}
+      <li v-for="(channel, index) in filteredChannels"
+          :key="index">
+        <a href="#"
+           @click.prevent="onClickChannel(channel)">
+          <div class="logo"
+               :style="{
+                  backgroundImage: `url('${channel.channel.desc_image || '/api/1/noop?ref=logo'}')`
+                }"></div>
+          <div class="meta">
+            <div class="title" v-html="channel.channel.title"></div>
+            <div class="subtitle" v-html="channel.channel.assetTitle"></div>
+          </div>
+        </a>
       </li>
     </ul>
   </div>
@@ -21,6 +30,7 @@ export default {
   data() {
     return {
       filter: '',
+      filteredChannels: [],
     };
   },
   computed: {
@@ -41,9 +51,23 @@ export default {
       this.$emit('onClickChannel', channel.channel);
     },
   },
+  watch: {
+    filter(newVal) {
+      const { channels } = this;
+      this.filteredChannels = channels.filter((channel) => {
+        const title = channel.channel.title.toLowerCase();
+        const subtitle = channel.channel.assetTitle.toLowerCase();
+
+        return title.indexOf(newVal) > -1 || subtitle.indexOf(newVal) > -1;
+      });
+    },
+  },
 
   mounted() {
-    this.getChannels();
+    this.getChannels()
+      .then(() => {
+        this.filteredChannels = this.channels;
+      });
   },
 
   beforeDestroy() {
@@ -64,10 +88,12 @@ export default {
     form {
       background: #fff;
       display: flex;
+      z-index: 1;
 
       input {
         width: 100%;
         flex-grow: 1;
+        margin-bottom: 0;
       }
     }
 
@@ -78,6 +104,35 @@ export default {
 
       li {
         padding: .25rem .5rem;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .logo {
+          display: block;
+          width: 5rem;
+          height: 5rem;
+          background-size: 5rem;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          margin: 0 1rem;
+          filter: grayscale(100%);
+        }
+
+        .meta {
+          display: block;
+          padding: .5rem;
+          width: 100%;
+
+          .subtitle {
+            font-size: .9em;
+          }
+        }
       }
     }
   }

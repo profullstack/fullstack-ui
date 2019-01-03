@@ -1,10 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      Code is only available as a demonstration and is not to be<br />
-      used in production without prior written consent.
-    </p>
+    <p>Free 1 hour trial. $60 USD/quarter or $200 USD/year.</p>
   </div>
 </template>
 

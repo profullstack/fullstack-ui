@@ -58,7 +58,7 @@ export default {
     margin: 0 auto;
     background: #000;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   nav {
@@ -66,12 +66,12 @@ export default {
 
     a {
       font-weight: bold;
-      color: #2c3e50;
+      color: #5c6ef0;
       padding: .5rem 1rem;
       background: #ccc;
 
       &.router-link-exact-active {
-        color: #42b983;
+        color: #3e3eff;
       }
     }
   }

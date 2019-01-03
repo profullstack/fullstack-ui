@@ -3,18 +3,6 @@
     <h1>Dashboard {{status}}</h1>
     <ul>
       <li>
-        <router-link to="/items">All Items</router-link>
-      </li>
-      <li>
-        <router-link to="/items/me">My Items</router-link>
-      </li>
-      <li>
-        <router-link to="/notes">All Notes</router-link>
-      </li>
-      <li>
-        <router-link to="/notes/me">My Notes</router-link>
-      </li>
-      <li>
         <router-link to="/transactions/me">My Transactions</router-link>
       </li>
       <li>
@@ -47,9 +35,6 @@ export default {
 <style lang="scss" scoped>
   .dashboard {
     text-align: left;
-  }
-
-  a {
-    text-decoration: none;
+    margin: 1rem;
   }
 </style>

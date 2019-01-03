@@ -12,7 +12,6 @@
       <input type="text" v-model="ip" placeholder="Enter IP: (x.x.x.x)"/>
       <button>Add</button>
     </form>
-    {{whitelist}}
     <ul class="list whitelist">
       <li v-for="(ip, index) in me.whitelist" :key="index">
         <span>{{index}}: {{ip}}</span>
@@ -72,18 +71,17 @@ export default {
         return;
       }
 
-      this.whitelist.push(this.ip);
+      this.me.whitelist.push(this.ip);
 
-      if (this.whitelist.length > 3) {
+      if (this.me.whitelist.length > 3) {
         this.error = 'You can only have up to 3 IP addresses.';
         return;
       }
 
-      this.setWhitelist(this.whitelist);
+      this.setWhitelist(this.me.whitelist);
       this.updateWhitelist({
         whitelist: this.whitelist,
       });
-      this.me.whitelist = this.whitelist;
       this.setUser(this.me);
     },
 

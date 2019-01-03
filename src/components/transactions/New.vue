@@ -6,8 +6,20 @@
         <legend>Create transaction</legend>
         <div class="form-field">
           <input type="text"
-                 v-model="transaction.currency"
-                 placeholder="Enter currency" />
+                 v-model="transaction.baseCurrency"
+                 placeholder="Enter currency" /> (btc, ltc, doge, etc)
+        </div>
+        <div class="form-field">
+          <input type="radio"
+                 name="planType"
+                 v-model="transaction.planType"
+                 value="quarterly"> $60 USD Quarterly
+        </div>
+        <div class="form-field">
+          <input type="radio"
+                 name="planType"
+                 v-model="transaction.planType"
+                 value="yearly"> $200 USD Yearly
         </div>
       </fieldset>
       <footer>
@@ -42,7 +54,6 @@ export default {
   watch: {
     pendingTx(newVal) {
       if (newVal._id) {
-        // todo: show iframe for payments from coinpayments.net
         this.$router.push(`/transactions/${this.pendingTx._id}`);
       }
     },

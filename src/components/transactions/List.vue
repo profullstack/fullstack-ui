@@ -1,7 +1,6 @@
 <template>
   <div class="transactions">
     <ul class="list">
-      {{transactions}}
       <li v-for="(tx, index) in transactions" :key="index">
         <h2>{{tx.createdAt}}</h2>
         <p>{{tx.amount}} {{tx.currency}}</p>

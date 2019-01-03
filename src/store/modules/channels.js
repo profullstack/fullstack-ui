@@ -4,6 +4,9 @@ import * as types from '../types';
 const actions = {
   [types.CHANNELS_LIST]: ({ commit }) => channels.getAll()
     .then((res) => {
+      res.data.items = res.data.items
+        .sort((a, b) => a.channel.title.localeCompare(b.channel.title));
+
       commit(types.CHANNELS_LIST, res.data.items);
     }),
 

@@ -53,12 +53,13 @@ export default {
   },
   watch: {
     filter(newVal) {
+      const val = newVal.toLowerCase();
       const { channels } = this;
       this.filteredChannels = channels.filter((channel) => {
         const title = channel.channel.title.toLowerCase();
         const subtitle = channel.channel.assetTitle.toLowerCase();
 
-        return title.indexOf(newVal) > -1 || subtitle.indexOf(newVal) > -1;
+        return title.indexOf(val) > -1 || subtitle.indexOf(val) > -1;
       });
     },
   },

@@ -102,6 +102,7 @@ export default {
       overflow-y: auto;
       color: #fff;
       text-align: left;
+      height: 100%;
 
       li {
         padding: .25rem .5rem;

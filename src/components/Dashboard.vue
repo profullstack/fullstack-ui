@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard">
     <h1>Dashboard {{status}}</h1>
+
+    <p>Your account expires on {{user.expiresAt}}.</p>
     <ul>
       <li>
         <router-link to="/transactions/me">My Transactions</router-link>

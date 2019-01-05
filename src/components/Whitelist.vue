@@ -49,8 +49,9 @@ export default {
     }),
 
     onDelete(ip) {
-      const whitelist = this.me.whitelist.splice(this.me.whitelist.indexOf(ip), 1);
-      this.setWhitelist(whitelist);
+      const index = this.me.whitelist.indexOf(ip);
+      this.me.whitelist.splice(index, 1);
+      this.setWhitelist(this.me.whitelist);
 
       if (this.whitelist.length === 0) {
         this.error = 'Whitelist must have at least 1 IP address.';

@@ -29,6 +29,7 @@ export default {
   name: 'Channels',
   data() {
     return {
+      polling: null,
       filter: '',
       filteredChannels: [],
     };
@@ -50,9 +51,17 @@ export default {
     onClickChannel(channel) {
       this.$emit('onClickChannel', channel.channel);
     },
-  },
-  watch: {
-    filter(newVal) {
+
+    startPolling() {
+      this.polling = setInterval(() => {
+        this.getChannels()
+          .then(() => {
+            this.filterChannels(this.filter);
+          });
+      }, 1000 * 60 * 5);
+    },
+
+    filterChannels(newVal) {
       const val = newVal.toLowerCase();
       const { channels } = this;
       this.filteredChannels = channels.filter((channel) => {
@@ -63,16 +72,24 @@ export default {
       });
     },
   },
+  watch: {
+    filter(newVal) {
+      this.filterChannels(newVal);
+    },
+  },
 
   mounted() {
     this.getChannels()
       .then(() => {
         this.filteredChannels = this.channels;
       });
+
+    this.startPolling();
   },
 
   beforeDestroy() {
     this.resetChannels([]);
+    clearInterval(this.polling);
   },
 };
 </script>

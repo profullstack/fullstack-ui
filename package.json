@@ -10,7 +10,7 @@
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "lint": "vue-cli-service lint",
-    "deploy:dev": "npm run build && ./bin/deploy.sh",
+    "deploy": "npm run build && ./bin/deploy.sh",
     "deploy:cfg": "scp ./etc/*.conf root@torula:/etc/nginx/sites-available/ && ssh -t root@torula /etc/init.d/nginx restart",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },

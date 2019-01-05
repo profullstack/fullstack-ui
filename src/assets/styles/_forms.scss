@@ -1,4 +1,4 @@
-input[type=text], input[type=password], input[type=email], textarea {
+input[type=text], input[type=password], input[type=email], textarea, select {
   padding: 1rem;
   border: 1px solid #000;
   outline: none;
@@ -37,7 +37,7 @@ form {
 
 .form-field {
   &:last-child {
-    input[type=text], input[type=password], input[type=email], textarea {
+    input[type=text], input[type=password], input[type=email], textarea, select {
       margin-bottom: 0;
     }
   }

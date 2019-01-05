@@ -3,7 +3,7 @@
     <form>
       <input type="text" name="filter" v-model="filter" />
     </form>
-    <ul>
+    <ul class="frame">
       <li v-for="(channel, index) in filteredChannels"
           :key="index">
         <a href="#"

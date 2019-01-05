@@ -5,9 +5,12 @@
       <fieldset>
         <legend>Create transaction</legend>
         <div class="form-field">
-          <input type="text"
-                 v-model="transaction.baseCurrency"
-                 placeholder="Enter currency" /> (btc, ltc, doge, etc)
+          <select v-model="transaction.baseCurrency">
+            <option selected>Select Currency</option>
+            <option v-for="(currency, index) in currencies"
+                    :key="index"
+                    :value="currency">{{currency}}</option>
+          </select>
         </div>
         <div class="form-field">
           <input type="radio"
@@ -36,6 +39,7 @@ export default {
   data() {
     return {
       transaction: {},
+      currencies: ['btc', 'ltc', 'bch', 'doge'],
     };
   },
   computed: {
@@ -61,5 +65,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  .transaction {
+    fieldset {
+      width: 20rem;
+    }
+  }
 
 </style>

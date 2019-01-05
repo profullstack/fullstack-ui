@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>Free 1 hour trial. $60 USD/quarter or $200 USD/year.</p>
+    <p>Free 1 week trial. $60 USD/quarter or $200 USD/year.</p>
   </div>
 </template>
 

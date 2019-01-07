@@ -1,6 +1,6 @@
 <template>
   <div id="channels" ref="channels">
-    <form>
+    <form @submit.prevent="noop">
       <input type="text" name="filter" v-model="filter" />
     </form>
     <ul class="frame">
@@ -70,6 +70,10 @@ export default {
 
         return title.indexOf(val) > -1 || subtitle.indexOf(val) > -1;
       });
+    },
+
+    noop() {
+      return false;
     },
   },
   watch: {
@@ -149,7 +153,7 @@ export default {
           width: 100%;
 
           .subtitle {
-            font-size: .9em;
+            font-size: .75em;
           }
         }
       }

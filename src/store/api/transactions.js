@@ -17,6 +17,11 @@ export default {
   //     .catch(globalErrorHandler);
   // },
 
+  getStatus(id) {
+    return api.get(`/transactions/status?id=${id}`)
+      .catch(globalErrorHandler);
+  },
+
   getAllByUser() {
     return api.get('/transactions/me')
       .catch(globalErrorHandler);

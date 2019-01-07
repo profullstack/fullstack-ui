@@ -22,6 +22,14 @@ const actions = {
     .then((res) => {
       commit(types.TRANSACTIONS_LIST, res.data);
     }),
+
+  [types.TRANSACTIONS_STATUS]: ({ commit }, opts) => {
+    console.log(opts, '<= opts', arguments, '<= arguments');
+    transactions.getStatus(opts.id)
+      .then((res) => {
+        commit(types.TRANSACTIONS_STATUS, res.data);
+      });
+  },
 };
 
 const mutations = {
@@ -36,6 +44,10 @@ const mutations = {
   [types.TRANSACTIONS_LIST]: (state, data) => {
     state.transactions = data;
   },
+
+  [types.TRANSACTIONS_STATUS]: (state, data) => {
+    state.status = data;
+  },
 };
 
 const getters = {
@@ -44,9 +56,12 @@ const getters = {
   [types.TRANSACTIONS_PENDING]: state => state.pendingTx,
 
   [types.TRANSACTIONS_LIST]: state => state.transactions,
+
+  [types.TRANSACTIONS_STATUS]: state => state.status,
 };
 
 const state = {
+  status: '',
   pendingTx: null,
   transaction: null,
   transactions: [],

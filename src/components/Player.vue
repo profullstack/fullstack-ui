@@ -37,8 +37,8 @@ export default {
         },
       },
       source: {
-        dash: '/api/1/sling/cde03261707a47c3ac3f4242765dd424.mpd?rewrite=false',
-        hls: '/api/1/sling/cde03261707a47c3ac3f4242765dd424.m3u8',
+        dash: '/api/1/sling/ca0cad8dbb4a4e68962810d8a6aa8b6a.mpd?rewrite=false',
+        hls: '/api/1/sling/ca0cad8dbb4a4e68962810d8a6aa8b6a.m3u8',
         drm: {
           widevine: {
             LA_URL: '/api/1/sling/yGsZQrFlUn',

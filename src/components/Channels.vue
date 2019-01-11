@@ -86,9 +86,8 @@ export default {
     this.getChannels()
       .then(() => {
         this.filteredChannels = this.channels;
+        this.startPolling();
       });
-
-    this.startPolling();
   },
 
   beforeDestroy() {

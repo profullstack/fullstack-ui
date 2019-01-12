@@ -7,7 +7,7 @@ module.exports = {
       .url(process.env.VUE_DEV_SERVER_URL)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to toru.la')
+      .assert.containsText('h1', 'Welcome to Toru.la')
       .assert.elementCount('h1', 1)
       .assert.elementCount('p', 1)
       .end();

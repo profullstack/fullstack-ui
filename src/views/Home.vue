@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to toru.la"/>
+    <HelloWorld msg="Welcome to Toru.la"/>
   </div>
 </template>
 

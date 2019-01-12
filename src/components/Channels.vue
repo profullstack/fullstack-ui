@@ -139,7 +139,7 @@ export default {
           display: block;
           width: 5rem;
           height: 5rem;
-          background-size: 5rem;
+          background-size: 4rem;
           background-position: 50% 50%;
           background-repeat: no-repeat;
           margin: 0 1rem;

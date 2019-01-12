@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>Free 1 week trial. $60 USD/quarter or $200 USD/year.</p>
+    <img class="logo" src="/logo.svg" />
   </div>
 </template>
 
@@ -32,5 +33,9 @@ export default {
 
   a {
     color: #42b983;
+  }
+
+  .logo {
+    width: 20rem;
   }
 </style>

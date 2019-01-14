@@ -82,7 +82,7 @@ export default {
     text-align: left;
     width: 80%;
     margin: 0 auto;
-
+    
     fieldset {
       width: 20rem;
     }

@@ -1,6 +1,13 @@
 <template>
   <div class="transaction">
-    {{pendingTx}}
+    <h1>Top off your account</h1>
+    <p>Select the crypto currency you have on hand to pay with then select plan duration.</p>
+    <p>Your account will automatically be topped off.</p>
+    <p>These prices are for early bird adopters who don't mind a little dust
+while we improve our platform.</p>
+    <p>You will have a limited time to complete the transaction so only
+create one if you are ready to pay.</p>
+
     <form @submit.prevent="onSubmit">
       <fieldset>
         <legend>Create transaction</legend>
@@ -16,13 +23,19 @@
           <input type="radio"
                  name="planType"
                  v-model="transaction.planType"
-                 value="quarterly"> $60 USD Quarterly
+                 value="quarterly"> $15 USD 1 month
         </div>
         <div class="form-field">
           <input type="radio"
                  name="planType"
                  v-model="transaction.planType"
-                 value="yearly"> $200 USD Yearly
+                 value="quarterly"> $40 USD Quarterly
+        </div>
+        <div class="form-field">
+          <input type="radio"
+                 name="planType"
+                 v-model="transaction.planType"
+                 value="yearly"> $125 USD Yearly
         </div>
       </fieldset>
       <footer>

@@ -65,13 +65,19 @@ export default {
     padding: 3rem;
 
     a {
-      font-weight: bold;
-      color: #5c6ef0;
-      padding: .5rem 1rem;
-      background: #ccc;
+      font-weight: 400;
+      padding: .5rem 1.25rem;
+      background: #000;
+      color: #00899E;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+      }
 
       &.router-link-exact-active {
-        color: #3e3eff;
+        color: #fff;
+        background: #00899E
       }
     }
   }

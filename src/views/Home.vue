@@ -3,10 +3,11 @@
     <HelloWorld msg="Welcome to Toru.la"/>
     <p>
       We offer over 800 channels including American and International.
-      Some examples are NBA, NHL, MLB, NFL, GOLF, UFC (PPV), Showtime,
+      Some examples are NBA, NHL, MLB, NFL, GOLF, UFC (PPV), ESPN,
+      Disney, HBO, Showtime,
       EPL (NBCSN/CNBC/BEIN), La Liga
       CNN, FOX, NBC, and many
-      others. Signup to test it out for a week!
+      more. Signup to test it out for a week!
     </p>
   </div>
 </template>

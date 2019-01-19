@@ -105,6 +105,7 @@ export default {
     align-items: flex-start;
     height: calc(100vh - 10rem);
     width: 25rem;
+    z-index: 1;
 
     form {
       background: #fff;

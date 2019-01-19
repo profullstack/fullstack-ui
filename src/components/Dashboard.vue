@@ -11,6 +11,10 @@
         <router-link to="/whitelist">My Whitelist</router-link>
       </li>
     </ul>
+
+    <footer>
+      <a href="http:/kodi.toru.la">Torula repo</a> (<a href="https://kodi.tv/download">Kodi v18</a> required)
+    </footer>
   </div>
 </template>
 

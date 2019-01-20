@@ -12,6 +12,9 @@ export default {
       player: null,
       playerConfig: {
         key: 'f5e04f00-076b-47b3-a13f-c8e731f59124',
+        cast: {
+          enable: true
+        },
         network: {
           preprocessHttpRequest: (type, request) => {
             console.log('type:', type);

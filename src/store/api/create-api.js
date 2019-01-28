@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'production' ? '/api/1' : 'https://localhost:3443/api/1';
+const baseURL = process.env.NODE_ENV === 'production' ? '/api/1' : 'http://localhost:3001/api/1';
 const api = Axios.create({
   baseURL,
   headers: {

@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-    <nav id="nav">
-      <router-link to="/">{{$t('home')}}</router-link>
-      <router-link to="/player">Player</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/register"
-                   v-if="!isLoggedIn">Register</router-link>
-      <router-link to="/login"
-                   v-if="!isLoggedIn">Login</router-link>
-      <router-link to="/dashboard"
-                   v-if="isLoggedIn">Dashboard</router-link>
-      <a href="#"
-         v-if="isLoggedIn"
-         @click.prevent="onLogout">Logout</a>
-    </nav>
+    <header>
+      <nav id="nav">
+        <router-link to="/">{{$t('home')}}</router-link>
+        <router-link to="/player">Player</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/register"
+                     v-if="!isLoggedIn">Register</router-link>
+        <router-link to="/login"
+                     v-if="!isLoggedIn">Login</router-link>
+        <router-link to="/dashboard"
+                     v-if="isLoggedIn">Dashboard</router-link>
+        <a href="#"
+           v-if="isLoggedIn"
+           @click.prevent="onLogout">Logout</a>
+      </nav>
+      <div class="status error" v-if="error">
+        {{errorMessage}}
+        <a href="#" @click.prevent="closeStatus()">x</a>
+      </div>
+    </header>
     <router-view/>
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 import * as types from './store/types';
 
 export default {
@@ -27,9 +33,14 @@ export default {
       user: types.ACCOUNTS_USER,
       status: types.ACCOUNTS_LOGIN_STATUS,
       token: types.ACCOUNTS_TOKEN,
+      error: types.ERROR_STATUS,
     }),
     isLoggedIn() {
       return !!this.token;
+    },
+
+    errorMessage() {
+      return (this.error.response && this.error.response.data.message) || this.error.message;
     },
   },
   methods: {
@@ -37,11 +48,19 @@ export default {
       logout: types.ACCOUNTS_LOGOUT,
     }),
 
+    ...mapMutations({
+      clearError: types.ERROR_STATUS,
+    }),
+
     onLogout() {
       this.logout()
         .then(() => {
           this.$router.push('/');
         });
+    },
+
+    closeStatus() {
+      this.clearError(null);
     },
   },
 };
@@ -79,6 +98,19 @@ export default {
         color: #fff;
         background: #00899E
       }
+    }
+  }
+
+  .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    a {
+      margin-left: 1rem;
+      color: red;
+      text-decoration: none;
     }
   }
 </style>

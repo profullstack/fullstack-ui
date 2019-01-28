@@ -55,3 +55,6 @@ export const TRANSACTIONS_STATUS = 'transactions/TRANSACTIONS_STATUS';
 // whitelist
 export const WHITELIST_LIST = 'whitelist/WHITELIST_LIST';
 export const WHITELIST_POST = 'whitelist/WHITELIST_POST';
+
+// error
+export const ERROR_STATUS = 'error/ERROR_STATUS';

@@ -32,7 +32,8 @@
 <style lang="scss" scoped>
   .about {
     text-align: left;
-    margin: 1rem;
+    max-width: 60rem;
+    margin: 1rem auto;
 
     p {
       margin: .5rem 0;

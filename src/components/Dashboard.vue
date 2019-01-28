@@ -45,6 +45,7 @@ export default {
 <style lang="scss" scoped>
   .dashboard {
     text-align: left;
-    margin: 1rem;
+    margin: 1rem auto;
+    max-width: 60rem;
   }
 </style>

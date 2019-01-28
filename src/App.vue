@@ -20,7 +20,9 @@
         <a href="#" @click.prevent="closeStatus()">x</a>
       </div>
     </header>
-    <router-view/>
+    <section>
+      <router-view/>
+    </section>
   </div>
 </template>
 <script>

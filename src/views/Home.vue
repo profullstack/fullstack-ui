@@ -23,3 +23,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+  .home {
+    max-width: 60rem;
+    text-align: center;
+    margin: 1rem auto;
+  }
+</style>

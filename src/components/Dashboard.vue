@@ -13,7 +13,11 @@
     </ul>
 
     <footer>
-      <a href="http:/kodi.toru.la">Torula repo</a> (<a href="https://kodi.tv/download">Kodi v18</a> required)
+      <ul>
+        <li><a href="http:/kodi.toru.la">Torula repo</a> (<a href="https://kodi.tv/download">Kodi v18</a> required)</li>
+        <!--<li>Follow us on Twitter <a href="http://twitter.com/torulatv">@torulatv</a></li>-->
+        <li>Join us on Reddit at <a href="http://reddit.com/r/Torula">r/Torula</a></li>
+      </ul>
     </footer>
   </div>
 </template>

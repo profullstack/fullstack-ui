@@ -14,6 +14,9 @@ const actions = {
       commit(types.ACCOUNTS_USER, res.data.user);
       commit(types.ACCOUNTS_LOGIN_STATUS, res.data.message);
       commit(types.ACCOUNTS_TOKEN, res.data.token);
+    })
+    .catch((err) => {
+      commit(types.ERROR_STATUS, err);
     }),
 
   [types.ACCOUNTS_LOGOUT]: ({ commit }) => {

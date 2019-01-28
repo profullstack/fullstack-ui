@@ -10,6 +10,7 @@ import notes from './modules/notes';
 import channels from './modules/channels';
 import transactions from './modules/transactions';
 import whitelist from './modules/whitelist';
+import error from './modules/error';
 
 Vue.use(Vuex);
 
@@ -28,6 +29,7 @@ const store = new Vuex.Store({
     channels,
     transactions,
     whitelist,
+    error,
   },
 });
 

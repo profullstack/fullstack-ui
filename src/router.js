@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from '@/components/Login.vue';
 import Dashboard from '@/components/Dashboard.vue';
 import Whitelist from '@/components/Whitelist.vue';
+import MyReferrals from '@/components/transactions/referrals/List.vue';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Register from './views/Register.vue';
@@ -151,6 +152,14 @@ const router = new Router({
       path: '/transactions/:id',
       name: 'transaction',
       component: ShowTransaction,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/transactions/referrals/me',
+      name: 'MyReferrals',
+      component: MyReferrals,
       meta: {
         requiresAuth: true,
       },

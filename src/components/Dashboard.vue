@@ -5,10 +5,13 @@
     <p>Your account expires on {{user.expiresAt}}.</p>
     <ul>
       <li>
+        <router-link to="/whitelist">My Whitelist</router-link>
+      </li>
+      <li>
         <router-link to="/transactions/me">My Transactions</router-link>
       </li>
       <li>
-        <router-link to="/whitelist">My Whitelist</router-link>
+        <router-link to="/transactions/referrals/me">My Referrals</router-link>
       </li>
     </ul>
 

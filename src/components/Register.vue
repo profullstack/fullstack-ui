@@ -55,6 +55,10 @@ export default {
         passwordRepeat: '',
         email: '',
         phone: '',
+        referred: {
+          reseller: this.$route.query.reseller,
+          referrer: this.$route.query.referrer,
+        },
       },
       status: '',
     };
@@ -65,6 +69,12 @@ export default {
       register: types.ACCOUNTS_REGISTER,
     }),
     onSubmit() {
+      // add referral request
+      if (this.$route.query.referrer) {
+        this.credentials.referred.reseller = Boolean(this.$route.query.reseller);
+        this.credentials.referred.referrer = this.$route.query.referrer;
+      }
+
       this.register(this.credentials)
         .then(() => {
           this.$router.push('dashboard');

@@ -9,7 +9,7 @@ module.exports = {
       .assert.elementPresent('.hello')
       .assert.containsText('h1', 'Welcome to Toru.la')
       .assert.elementCount('h1', 1)
-      .assert.elementCount('p', 2)
+      .assert.elementCount('p', 3)
       .end();
   },
 };

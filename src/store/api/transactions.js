@@ -11,11 +11,20 @@ export default {
       .catch(globalErrorHandler);
   },
 
-  // todo: setup admin user role first
-  // getAll() {
-  //   return api.get('/transactions')
-  //     .catch(globalErrorHandler);
-  // },
+  getAll() {
+    return api.get('/transactions')
+      .catch(globalErrorHandler);
+  },
+
+  getAllReferrals() {
+    return api.get('/transactions/referrals')
+      .catch(globalErrorHandler);
+  },
+
+  getReferralsByUser() {
+    return api.get('/transactions/referrals/me')
+      .catch(globalErrorHandler);
+  },
 
   getStatus(id) {
     return api.get(`/transactions/status?id=${id}`)

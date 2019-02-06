@@ -36,6 +36,8 @@ form {
 }
 
 .form-field {
+  margin-bottom: 1rem;
+
   &:last-child {
     input[type=text], input[type=password], input[type=email], textarea, select {
       margin-bottom: 0;

@@ -7,8 +7,9 @@
       Disney, HBO, Showtime,
       EPL (NBCSN/CNBC/BEIN), La Liga
       CNN, FOX, NBC, and many
-      more. Signup to test it out for a week!
+      more.
     </p>
+    <p>Signup to test it out for two hours!</p>
   </div>
 </template>
 

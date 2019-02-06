@@ -12,11 +12,20 @@ const actions = {
       commit(types.TRANSACTIONS_TX, res.data);
     }),
 
-  // todo: setup admin role first
-  // [types.TRANSACTIONS_LIST]: ({ commit }) => transactions.getAll()
-  //   .then((res) => {
-  //     commit(types.TRANSACTIONS_LIST, res.data);
-  //   }),
+  [types.TRANSACTIONS_LIST]: ({ commit }) => transactions.getAll()
+    .then((res) => {
+      commit(types.TRANSACTIONS_LIST, res.data);
+    }),
+
+  [types.TRANSACTIONS_REFERRALS_ME]: ({ commit }) => transactions.getReferralsByUser()
+    .then((res) => {
+      commit(types.TRANSACTIONS_REFERRALS, res.data);
+    }),
+
+  [types.TRANSACTIONS_REFERRALS]: ({ commit }) => transactions.getAllReferrals()
+    .then((res) => {
+      commit(types.TRANSACTIONS_REFERRALS, res.data);
+    }),
 
   [types.TRANSACTIONS_LIST_ME]: ({ commit }) => transactions.getAllByUser()
     .then((res) => {
@@ -45,6 +54,10 @@ const mutations = {
     state.transactions = data;
   },
 
+  [types.TRANSACTIONS_REFERRALS]: (state, data) => {
+    state.referrals = data;
+  },
+
   [types.TRANSACTIONS_STATUS]: (state, data) => {
     state.status = data;
   },
@@ -57,6 +70,8 @@ const getters = {
 
   [types.TRANSACTIONS_LIST]: state => state.transactions,
 
+  [types.TRANSACTIONS_REFERRALS]: state => state.referrals,
+
   [types.TRANSACTIONS_STATUS]: state => state.status,
 };
 
@@ -65,6 +80,7 @@ const state = {
   pendingTx: null,
   transaction: null,
   transactions: [],
+  referrals: [],
 };
 
 export default {

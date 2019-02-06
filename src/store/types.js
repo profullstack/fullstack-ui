@@ -51,6 +51,8 @@ export const TRANSACTIONS_LIST = 'transactions/TRANSACTIONS_LIST';
 export const TRANSACTIONS_LIST_ME = 'transactions/TRANSACTIONS_LIST_ME';
 export const TRANSACTIONS_PENDING = 'transactions/TRANSACTIONS_PENDING';
 export const TRANSACTIONS_STATUS = 'transactions/TRANSACTIONS_STATUS';
+export const TRANSACTIONS_REFERRALS = 'transactions/TRANSACTIONS_REFERRALS';
+export const TRANSACTIONS_REFERRALS_ME = 'transactions/TRANSACTIONS_REFERRALS_ME';
 
 // whitelist
 export const WHITELIST_LIST = 'whitelist/WHITELIST_LIST';

@@ -57,7 +57,7 @@ export default {
         phone: '',
         referred: {
           reseller: this.$route.query.reseller,
-          referrer: this.$route.query.referrer,
+          user: this.$route.query.referrer,
         },
       },
       status: '',
@@ -72,7 +72,7 @@ export default {
       // add referral request
       if (this.$route.query.referrer) {
         this.credentials.referred.reseller = Boolean(this.$route.query.reseller);
-        this.credentials.referred.referrer = this.$route.query.referrer;
+        this.credentials.referred.user = this.$route.query.referrer;
       }
 
       this.register(this.credentials)

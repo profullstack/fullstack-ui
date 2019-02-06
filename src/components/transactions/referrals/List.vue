@@ -12,7 +12,7 @@
       </li>
     </ul>
     <form>
-      <p>Refer you family and friends and start earning with our referral program.</p>
+      <p>Refer your family and friends and start earning with our referral program.</p>
       <div class="form-field">
         <p><b>Reseller:</b> Earn 20% commission
           on each sale you bring in (paid in bitcoin on a monthly basis).</p>
@@ -44,11 +44,11 @@ export default {
     }),
     resellerLink() {
       // https://toru.la/#/register?referrer=rawsports&reseller=true
-      return `${window.location.protocol}://${window.location.hostname}/#/register?referrer=${this.me.username}&reseller=true`;
+      return `${window.location.protocol}//${window.location.hostname}/#/register?referrer=${this.me.username}&reseller=true`;
     },
     referralLink() {
       // https://toru.la/#/register?referrer=rawsports&reseller=false
-      return `${window.location.protocol}://${window.location.hostname}/#/register?referrer=${this.me.username}&reseller=false`;
+      return `${window.location.protocol}//${window.location.hostname}/#/register?referrer=${this.me.username}&reseller=false`;
     },
   },
 

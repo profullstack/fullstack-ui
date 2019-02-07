@@ -9,8 +9,23 @@ Fullstack UI with vue.js and scss.
 
 ## deploy
 
-	npm run build
-	./bin/deploy.sh
+	npm run deploy
+
+## create .env.dev
+
+    FULLSTACK_NAME=ubuntu
+    FULLSTACK_PATH=fullstack-dev
+    FULLSTACK_PROJECT=fullstack-ui
+
+    ln -s .env.dev .env
+
+## create .env.prod
+
+    FULLSTACK_NAME=ubuntu
+    FULLSTACK_PATH=fullstack
+    FULLSTACK_PROJECT=fullstack-ui
+
+    ln -s .env.prod .env
 
 ## todo
 

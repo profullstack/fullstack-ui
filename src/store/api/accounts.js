@@ -15,4 +15,14 @@ export default {
       .catch(globalErrorHandler);
   },
 
+  me() {
+    return api.get('/accounts/me')
+      .catch(globalErrorHandler);
+  },
+
+  update(data) {
+    debugger;
+    return api.patch('/accounts/me', data)
+      .catch(globalErrorHandler);
+  },
 };

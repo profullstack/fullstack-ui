@@ -13,6 +13,9 @@
       <li>
         <router-link to="/transactions/referrals/me">My Referrals</router-link>
       </li>
+      <li>
+        <router-link to="/account">My Account</router-link>
+      </li>
     </ul>
 
     <footer>

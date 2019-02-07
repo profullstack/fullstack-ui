@@ -1,6 +1,5 @@
 <template>
   <div class="account">
-    {{user}}
     <form @submit.prevent="onSubmit()">
       <fieldset>
         <legend>Account settings</legend>

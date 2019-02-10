@@ -10,6 +10,12 @@
       more.
     </p>
     <p>Signup to test it out for two hours!</p>
+
+    <footer>
+      <p>(We also have a 20% commission affiliate program,
+        earn free services too,
+        signup for free to join)</p>
+    </footer>
   </div>
 </template>
 
@@ -29,5 +35,11 @@ export default {
     max-width: 60rem;
     text-align: center;
     margin: 1rem auto;
+
+    footer {
+      margin-top: 5rem;
+
+      font-size: .8em;
+    }
   }
 </style>

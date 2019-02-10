@@ -20,7 +20,6 @@
     <p><b>Status:</b> {{status.status_text}}</p>
     <p v-if="status.recv_confirms"><b>Confirmations Received:</b> {{status.recv_confirms}}</p>
     <p v-if="status.send_tx"><b>Explorer:</b>&nbsp;<a :href="explorer">view transaction</a></p>
-
   </div>
 </template>
 <script>
@@ -54,7 +53,6 @@ export default {
   mounted() {
     this.polling = setInterval(() => {
       const id = this.transaction.txn_id;
-      console.log(id, '<= polling');
       this.getStatus({ id });
     }, 1000);
   },

@@ -23,19 +23,19 @@ create one if you are ready to pay.</p>
           <input type="radio"
                  name="planType"
                  v-model="transaction.planType"
-                 value="monthly"> $15 USD 1 month
+                 value="monthly"> $6 USD 1 month
         </div>
         <div class="form-field">
           <input type="radio"
                  name="planType"
                  v-model="transaction.planType"
-                 value="quarterly"> $40 USD Quarterly
+                 value="quarterly"> $15 USD Quarterly
         </div>
         <div class="form-field">
           <input type="radio"
                  name="planType"
                  v-model="transaction.planType"
-                 value="yearly"> $125 USD Yearly
+                 value="yearly"> $50 USD Yearly
         </div>
       </fieldset>
       <footer>

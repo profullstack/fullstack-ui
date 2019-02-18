@@ -55,7 +55,7 @@ export default {
         passwordRepeat: '',
         email: '',
         phone: '',
-        referred: localStorage.getItem('referred') || {},
+        referred: {},
       },
       status: '',
     };
@@ -66,12 +66,6 @@ export default {
       register: types.ACCOUNTS_REGISTER,
     }),
     onSubmit() {
-      // add referral request
-      if (this.$route.query.referrer) {
-        this.credentials.referred.reseller = Boolean(this.$route.query.reseller);
-        this.credentials.referred.user = this.$route.query.referrer;
-      }
-
       this.register(this.credentials)
         .then(() => {
           this.$router.push('dashboard');
@@ -79,21 +73,23 @@ export default {
     },
 
     setReferralDetails() {
-      const referred = (localStorage.getItem('referred')
-        && JSON.parse(localStorage.getItem('referred')))
-        || {};
+      const referred = localStorage.getItem('referred') ?
+        JSON.parse(localStorage.getItem('referred')) :
+        {};
 
-      if (!referred.user && typeof this.$route.query.referrer === 'boolean') {
+      if (!referred.user && this.$route.query.referrer) {
         referred.user = this.$route.query.referrer;
       }
 
-      if (typeof referred.reseller === 'undefined' && this.$route.query.reseller) {
-        referred.reseller = this.$route.query.reseller;
+      if (typeof referred.reseller === 'undefined') {
+        referred.reseller = Boolean(this.$route.query.reseller);
       }
 
       if (referred.user) {
         localStorage.setItem('referred', JSON.stringify(referred));
       }
+
+      this.credentials.referred = referred;
     },
   },
   mounted() {

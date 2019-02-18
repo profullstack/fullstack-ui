@@ -55,10 +55,7 @@ export default {
         passwordRepeat: '',
         email: '',
         phone: '',
-        referred: {
-          reseller: this.$route.query.reseller,
-          user: this.$route.query.referrer,
-        },
+        referred: localStorage.getItem('referred') || {},
       },
       status: '',
     };
@@ -80,6 +77,27 @@ export default {
           this.$router.push('dashboard');
         });
     },
+
+    setReferralDetails() {
+      const referred = (localStorage.getItem('referred')
+        && JSON.parse(localStorage.getItem('referred')))
+        || {};
+
+      if (!referred.user && typeof this.$route.query.referrer === 'boolean') {
+        referred.user = this.$route.query.referrer;
+      }
+
+      if (typeof referred.reseller === 'undefined' && this.$route.query.reseller) {
+        referred.reseller = this.$route.query.reseller;
+      }
+
+      if (referred.user) {
+        localStorage.setItem('referred', JSON.stringify(referred));
+      }
+    },
+  },
+  mounted() {
+    this.setReferralDetails();
   },
 };
 </script>

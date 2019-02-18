@@ -12,9 +12,13 @@
     <p>Signup to test it out for two hours!</p>
 
     <footer>
-      <p>(We also have a 20% commission affiliate program,
+      <p>(We also have a 20% commission bitcoin affiliate program,
         earn free services too,
         signup for free to join)</p>
+      <p>If you own a blog and write a review about our service
+        or our affiliate program send a link to the
+        article at <a href="mailto:hello@toru.la?subject=Torula%20review">hello@toru.la</a>
+        and if we approve you'll get a free year of service!</p>
     </footer>
   </div>
 </template>

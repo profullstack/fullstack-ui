@@ -31,8 +31,7 @@ export default {
           this.message = 'Note deleted!';
           this.$router.push('/dashboard');
         })
-        .catch((err) => {
-          console.error(err);
+        .catch(() => {
           this.message = 'Unable to delete note';
         });
     },

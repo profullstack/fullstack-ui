@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>Free 2 hour trial. $6 USD/month $15 USD/quarter or $50 USD/year (crypto only)</p>
+    <p>Free 5 day trial. $6 USD/month $15 USD/quarter or $50 USD/year (crypto only)</p>
     <img class="logo" src="/logo.svg" />
   </div>
 </template>

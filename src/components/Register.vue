@@ -56,6 +56,7 @@ export default {
         email: '',
         phone: '',
         referred: {},
+        whitelist: [],
       },
       status: '',
     };

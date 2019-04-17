@@ -9,7 +9,7 @@
       CNN, FOX, NBC, and many
       more.
     </p>
-    <p>Signup to test it out for two hours!</p>
+    <p>Signup to test it out free for 5 days! (no payment required)</p>
 
     <footer>
       <p>(We also have a 20% commission bitcoin affiliate program,

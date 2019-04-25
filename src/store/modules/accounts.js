@@ -2,6 +2,19 @@ import accounts from '../api/accounts';
 import * as types from '../types';
 
 const actions = {
+<<<<<<< HEAD
+=======
+  [types.ACCOUNTS_ME]: ({ commit }) => accounts.me()
+    .then((res) => {
+      commit(types.ACCOUNTS_USER, res.data);
+    }),
+
+  [types.ACCOUNTS_ME_UPDATE]: ({ commit }, data) => accounts.update(data)
+    .then((res) => {
+      commit(types.ACCOUNTS_USER, res.data);
+    }),
+
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
   [types.ACCOUNTS_REGISTER]: ({ commit }, opts) => accounts.register(opts)
     .then((res) => {
       commit(types.ACCOUNTS_USER, res.data.user);
@@ -14,6 +27,12 @@ const actions = {
       commit(types.ACCOUNTS_USER, res.data.user);
       commit(types.ACCOUNTS_LOGIN_STATUS, res.data.message);
       commit(types.ACCOUNTS_TOKEN, res.data.token);
+<<<<<<< HEAD
+=======
+    })
+    .catch((err) => {
+      commit(types.ERROR_STATUS, err);
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
     }),
 
   [types.ACCOUNTS_LOGOUT]: ({ commit }) => {

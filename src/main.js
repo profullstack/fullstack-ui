@@ -3,7 +3,11 @@ import VueI18n from 'vue-i18n';
 import App from './App.vue';
 import router from './router';
 import store from './store/';
+<<<<<<< HEAD
 import './registerServiceWorker';
+=======
+// import './registerServiceWorker';
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 import { messages } from './constants';
 
 Vue.config.productionTip = false;

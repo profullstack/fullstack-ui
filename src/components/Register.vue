@@ -55,6 +55,11 @@ export default {
         passwordRepeat: '',
         email: '',
         phone: '',
+<<<<<<< HEAD
+=======
+        referred: {},
+        whitelist: [],
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
       },
       status: '',
     };
@@ -70,6 +75,32 @@ export default {
           this.$router.push('dashboard');
         });
     },
+<<<<<<< HEAD
+=======
+
+    setReferralDetails() {
+      const referred = localStorage.getItem('referred') ?
+        JSON.parse(localStorage.getItem('referred')) :
+        {};
+
+      if (!referred.user && this.$route.query.referrer) {
+        referred.user = this.$route.query.referrer;
+      }
+
+      if (typeof referred.reseller === 'undefined') {
+        referred.reseller = Boolean(this.$route.query.reseller);
+      }
+
+      if (referred.user) {
+        localStorage.setItem('referred', JSON.stringify(referred));
+      }
+
+      this.credentials.referred = referred;
+    },
+  },
+  mounted() {
+    this.setReferralDetails();
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
   },
 };
 </script>

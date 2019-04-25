@@ -14,4 +14,18 @@ export default {
     return api.post('/accounts', creds)
       .catch(globalErrorHandler);
   },
+<<<<<<< HEAD
+=======
+
+  me() {
+    return api.get('/accounts/me')
+      .catch(globalErrorHandler);
+  },
+
+  update(data) {
+    debugger;
+    return api.patch('/accounts/me', data)
+      .catch(globalErrorHandler);
+  },
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 };

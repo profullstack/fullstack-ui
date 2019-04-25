@@ -31,8 +31,12 @@ export default {
           this.message = 'Note deleted!';
           this.$router.push('/dashboard');
         })
+<<<<<<< HEAD
         .catch((err) => {
           console.error(err);
+=======
+        .catch(() => {
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
           this.message = 'Unable to delete note';
         });
     },

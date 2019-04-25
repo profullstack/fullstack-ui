@@ -1,0 +1,26 @@
+.hide {
+  display: none !important;
+}
+
+.frame::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: rgba(0,0,0,.2);
+}
+
+.frame::-webkit-scrollbar:vertical {
+  width: 3rem;
+}
+
+.frame::-webkit-scrollbar:horizontal {
+  height: 2rem;
+}
+
+.frame::-webkit-scrollbar-thumb {
+  border-radius: .25rem;
+  border: .25rem solid rgba(255,255,255,.2);
+  background-color: rgba(255,255,255,.2);
+}
+
+p {
+  margin: 1rem 0;
+}

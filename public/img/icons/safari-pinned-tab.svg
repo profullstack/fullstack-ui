@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -146,4 +147,10 @@ fill="#000000" stroke="none">
 561 -392 678 -67 117 -134 232 -147 255 -13 23 -33 59 -46 80 l-22 37 -9615 0
 -9615 0 20 -32z"/>
 </g>
+=======
+<svg width="466" height="466" viewBox="0 0 466 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="466" height="466" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M233 427C340.143 427 427 340.143 427 233C427 125.857 340.143 39 233 39C125.857 39 39 125.857 39 233C39 340.143 125.857 427 233 427Z" fill="#0788A0"/>
+<path d="M323.971 148.844H256.374V332.689H210.906V148.844H144.218V112.014H323.971V148.844Z" fill="white"/>
+>>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 </svg>

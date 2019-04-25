@@ -1,17 +1,6 @@
 <template>
   <div class="home">
-<<<<<<< HEAD
     <HelloWorld msg="Welcome to fullstack-ui"/>
-=======
-    <HelloWorld msg="Welcome to Toru.la"/>
-    <p>
-      We offer over 800 channels including American and International.
-      Some examples are NBA, NHL, MLB, NFL, GOLF, UFC (PPV), ESPN,
-      Disney, HBO, Showtime,
-      EPL (NBCSN/CNBC/BEIN), La Liga
-      CNN, FOX, NBC, and many
-      more.
-    </p>
     <p>Signup to test it out free for 5 days! (no payment required)</p>
 
     <footer>
@@ -20,10 +9,9 @@
         signup for free to join)</p>
       <p>If you own a blog and write a review about our service
         or our affiliate program send a link to the
-        article at <a href="mailto:hello@toru.la?subject=Torula%20review">hello@toru.la</a>
+        article at <a href="mailto:hello@fullstack.style?subject=Review">hello@fullstack.style</a>
         and if we approve you'll get a free year of service!</p>
     </footer>
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
   </div>
 </template>
 
@@ -38,8 +26,6 @@ export default {
   },
 };
 </script>
-<<<<<<< HEAD
-=======
 <style lang="scss" scoped>
   .home {
     max-width: 60rem;
@@ -53,4 +39,3 @@ export default {
     }
   }
 </style>
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51

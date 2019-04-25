@@ -2,12 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/Login.vue';
 import Dashboard from '@/components/Dashboard.vue';
-<<<<<<< HEAD
-=======
 import Whitelist from '@/components/Whitelist.vue';
 import MyReferrals from '@/components/transactions/referrals/List.vue';
 import Account from '@/components/Account.vue';
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Register from './views/Register.vue';
@@ -21,13 +18,10 @@ import ListNotes from './views/notes/List.vue';
 import EditNote from './views/notes/Edit.vue';
 import NewNote from './views/notes/New.vue';
 import MyNotes from './views/notes/Me.vue';
-<<<<<<< HEAD
-=======
 import Player from './views/Player.vue';
 import MyTransactions from './views/transactions/Me.vue';
 import NewTransaction from './views/transactions/New.vue';
 import ShowTransaction from './views/transactions/Show.vue';
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 
 Vue.use(Router);
 
@@ -44,8 +38,6 @@ const router = new Router({
       component: About,
     },
     {
-<<<<<<< HEAD
-=======
       path: '/account',
       name: 'account',
       component: Account,
@@ -54,7 +46,6 @@ const router = new Router({
       },
     },
     {
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
       path: '/login',
       name: 'Login',
       component: Login,
@@ -76,12 +67,9 @@ const router = new Router({
       path: '/items',
       name: 'items',
       component: ListItems,
-<<<<<<< HEAD
-=======
       meta: {
         requiresAuth: true,
       },
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
     },
     {
       path: '/items/new',
@@ -92,11 +80,7 @@ const router = new Router({
     },
     {
       path: '/items/me',
-<<<<<<< HEAD
-      name: 'items',
-=======
       name: 'my-items',
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
       component: MyItems,
       meta: {
         requiresAuth: true,
@@ -150,8 +134,6 @@ const router = new Router({
           },
         }],
     },
-<<<<<<< HEAD
-=======
     {
       path: '/player',
       name: 'player',
@@ -199,7 +181,6 @@ const router = new Router({
         requiresAuth: true,
       },
     },
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
   ],
 });
 

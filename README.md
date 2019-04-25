@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 # fullstack-ui
 
 Fullstack UI with vue.js and scss.
-=======
-# torula-ui
-
-Torula UI with vue.js and scss.
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 
 ## development
 
@@ -15,7 +9,6 @@ Torula UI with vue.js and scss.
 
 ## deploy
 
-<<<<<<< HEAD
 	npm run deploy
 
 ## create .env.dev
@@ -33,10 +26,8 @@ Torula UI with vue.js and scss.
     FULLSTACK_PROJECT=fullstack-ui
 
     ln -s .env.prod .env
-=======
 	npm run build
 	./bin/deploy.sh
->>>>>>> 17e5838ed620f443beef10b72321ed8e1c6ccf51
 
 ## todo
 
